@@ -1,0 +1,17 @@
+﻿@page "/"
+@inject NavigationManager _Navigate
+
+<PageTitle>Home</PageTitle>
+
+<section>
+    <h2>Ejercicios</h2>
+    <hr />
+
+    <div class="d-flex container-fluid m-1 gap-2">
+        @foreach (var exercises in ExercisesList) 
+        {
+            <ComponentExercise Title="@exercises.Key" Url="@exercises.Value" />
+        }
+    </div>
+
+</section>

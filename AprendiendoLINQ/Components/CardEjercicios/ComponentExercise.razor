@@ -1,0 +1,16 @@
+﻿<div class="shadow p-2 d-inline-block">
+    <p class="text-black">@Title</p>
+    <div class="w-100 d-block justify-content-end">
+        <NavLink class="btn btn-primary" href="@Url">Ir</NavLink>
+    </div>
+</div>
+
+@code
+{
+
+    [Parameter, EditorRequired]
+    public string Title { get; set; }
+
+    [Parameter, EditorRequired]
+    public string Url { get; set; }
+}

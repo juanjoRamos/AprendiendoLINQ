@@ -1,0 +1,49 @@
+﻿@inject NorthwingContext _NortwingContext
+@page "/exercise1"
+
+<h3>Ejercicio 1</h3>
+<h6>Pedidos por cliente y su total acumulado</h6>
+<p>Obtén una lista con el nombre del cliente, el ID del pedido y el total acumulado por cada pedido (calculado como la suma de la cantidad de productos multiplicada por el precio unitario en ese pedido). Ordena los resultados de mayor a menor por el total del pedido.</p>
+<strong>Resultado esperado</strong>
+<ol>
+    <li>
+        Lista con columnas
+        <ol>
+            <li>CustomerName</li>
+            <li>OrderId</li>
+            <li>TotalAmount</li>
+        </ol>
+    </li>
+    <li>Ordenada de mayor a menor por <code>TotalAmount</code></li>
+</ol>
+
+<h3>Resultado</h3>
+<hr />
+
+@if (ListModelEjercicio1 != null)
+{
+    <table class="table table-responsive table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Customer name</th>
+                <th class="d-none">Order id</th>
+                <th>Total amount</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Models.ModelEjercicio1 ejercicio1 in ListModelEjercicio1)
+            {
+                <tr>
+                    <td>@ejercicio1.CustomerName</td>
+                    <td class="d-none">@ejercicio1.OrderId</td>
+                    <td>@(ejercicio1.TotalAmount.ToString("F2")) $</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+}

@@ -1,0 +1,49 @@
+﻿@inject NorthwingContext _NortwingContext
+@page "/exercise2"
+
+<h3>Ejercicio 2</h3>
+<h6> Obtener un informe de ventas por producto</h6>
+<p>Supongamos que tienes una lista de objetos <code>Product</code> (producto),
+    <code>Sale</code> (venta), y <code>SaleDetail</code> (detalle de la venta).
+    El objetivo es obtener un informe de ventas por producto, que incluya el nombre del producto,
+    la cantidad total vendida y el ingreso total por ese producto. Luego, 
+    ordenaremos el informe por el total de ingresos de manera descendente.</p>
+<strong>Resultado esperado</strong>
+<ol>
+    <li>
+        Lista con columnas
+        <ol>
+            <li>Nombre del producto</li>
+            <li>Cantidad total vendida</li>
+            <li>Ingreso total (Cantidad * Precio unitario)</li>
+        </ol>
+    </li>
+    <li>Ordenada de mayor a menor por <code>TotalRevenue</code></li>
+</ol>
+
+<h3>Resultado</h3>
+<hr />
+
+@if (ListModelEjercicio2 != null)
+{
+    <table class="table table-responsive table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Quantity sold</th>
+                <th>Total revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Models.ModelEjercicio2 ejercicio2 in ListModelEjercicio2)
+            {
+                <tr>
+                    <td>@ejercicio2.ProductName</td>
+                    <td>@ejercicio2.TotalSold</td>
+                    <td>@(ejercicio2.Totalrevenue) $</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
