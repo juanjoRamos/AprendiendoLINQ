@@ -33,8 +33,10 @@ namespace AprendiendoLINQ.Dbcontext
                 .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<OrderDetails>()
-                .ToTable("orderdetails");            
-            
+                .ToTable("orderdetails");
+
+            modelBuilder.Entity<Category>()
+                .ToTable("categories");
 
             base.OnModelCreating(modelBuilder);
         }

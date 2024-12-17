@@ -12,6 +12,7 @@ namespace AprendiendoLINQ.Components.Pages
         {
             ExercisesList.Add("Ejercicio 1", "/exercise1");
             ExercisesList.Add("Ejercicio 2", "/exercise2");
+            ExercisesList.Add("Ejercicio 3", "/exercise3");
             base.OnInitialized();
         }
     }

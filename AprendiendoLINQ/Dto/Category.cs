@@ -1,16 +1,18 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AprendiendoLINQ.Dto
 {
+    [Table("categories")]
     public class Category
     {
         [Column("categoryid")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
-        [Column("categoryname")]
-        public string Name { get; set; }
+        [Column("categoryname"), MaxLength(50)]
+        public string? Name { get; set; }
 
         [Column("description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
     }
 }

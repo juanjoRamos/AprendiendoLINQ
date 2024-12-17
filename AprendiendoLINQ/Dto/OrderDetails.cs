@@ -22,6 +22,6 @@ namespace AprendiendoLINQ.Dto
         public int Quantity { get; set; }
 
         [Column("discount")]
-        public double  Discount { get; set; }
+        public double?  Discount { get; set; }
     }
 }

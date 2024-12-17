@@ -1,0 +1,47 @@
+﻿@inject NorthwingContext _NortwingContext
+@page "/exercise3"
+
+<h3>Ejercicio 3</h3>
+<h6>Obtener un informe de ventas por producto</h6>
+<p>
+    Queremos saber cuáles son las categorías más populares basadas en el número
+    de productos vendidos y su ingreso total.
+</p>
+<strong>Resultado esperado</strong>
+<ol>
+    <li>
+        Lista con columnas (Categories) ordenadas por el ingreso total generado (de mayor a menor).
+        <ol>
+            <li>Nombre de la categoria <code>CategoryName</code></li>
+            <li>Cantidad total de productos vendidos en esa categoria.</li>
+            <li>Ingreso total generado por los productos de esa categoria.</li>
+        </ol>
+    </li>
+</ol>
+
+<h3>Resultado</h3>
+<hr />
+
+@if (ListModelEjercicio3 != null) 
+{
+    <table class="table table-responsive table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Category name</th>
+                <th>Total category product sold</th>
+                <th>Total revenue by category</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Models.ModelEjercicio3 ejercicio3 in ListModelEjercicio3)
+            {
+                <tr>
+                    <td>@ejercicio3.CategoryName</td>
+                    <td>@ejercicio3.TotalProductByCategory</td>
+                    <td>@(ejercicio3.TotalRevenueByCategory) $</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
